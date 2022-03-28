@@ -1,0 +1,154 @@
+﻿<Window x:Class="ArchiverHuffmanMethod.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ArchiverHuffmanMethod"
+        xmlns:iconPacks = "http://metro.mahapps.com/winfx/xaml/iconpacks"
+        mc:Ignorable="d"
+        Title="Archiver"
+        Height="325" Width="635"
+        WindowStyle="None"
+        ResizeMode="NoResize">
+
+    <Grid Background="#373B44">
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <Border Grid.ColumnSpan="2"
+                Background="#2D313A">
+
+            <Grid HorizontalAlignment="Stretch">
+
+                <Label Content="Archiver"
+                       Foreground="Gray"
+                       FontWeight="SemiBold"
+                       MouseDown="BorderMouseDown"/>
+
+                <StackPanel Orientation="Horizontal"
+                            HorizontalAlignment="Right"
+                            Margin="0, 0, 3, 0">
+
+                    <Button Width="13"
+                            Height="20"
+                            Content="{iconPacks:Fontisto Kind=MinusA}"
+                            Background="Transparent"
+                            Foreground="Gray"
+                            BorderThickness="0"
+                            Margin="0, 5.5, 3, 0"
+                            Click="HideApplication"
+                            Style="{StaticResource ResourceKey=AnimationWithoutBorderThickness}"/>
+
+                    <Button Width="20"
+                            Height="20"
+                            Content="✖"
+                            Background="Transparent"
+                            Foreground="Gray"
+                            BorderThickness="0"
+                            Click="CloseApplication"
+                            Style="{StaticResource ResourceKey=AnimationWithoutBorderThickness}"/>
+
+                </StackPanel>
+
+            </Grid>
+        </Border>
+
+        <Border Grid.Row="1">
+
+            <StackPanel Orientation="Vertical" Margin="-17, 0, 0, 0">
+
+                <Label Content="File"
+                       Width="50"
+                       Height="35"
+                       VerticalAlignment="Center"
+                       HorizontalAlignment="Right"
+                       Foreground="Gray"
+                       FontSize="18"
+                       Margin="0, 10, 573.5, 0"/>
+
+
+                <StackPanel Orientation="Vertical">
+                    <StackPanel Orientation="Horizontal"
+                        Margin="00, -20, 0, 320">
+
+                        <Label Height="25"
+                               Width="500"
+                               Margin="30, 20, 0, 0"
+                               Background="#2F333C"
+                               BorderThickness="0"
+                               Name="SelectedFileLable"
+                               Foreground="White"/>
+
+                        <Button Width="100"
+                            Height="25"
+                            Margin="10, 20, 0, 0"
+                            Content="Browse"
+                            Background="#272B34"
+                            BorderThickness="0"
+                            Foreground="#90939A"
+                            FontWeight="Medium"
+                            Style="{StaticResource InteractionButton}"
+                            Click="BrowseFile"/>
+
+                    </StackPanel>
+                </StackPanel>
+
+
+                <Label Content="Save Path:"
+                       Width="100"
+                       Height="35"
+                       VerticalAlignment="Center"
+                       HorizontalAlignment="Left"
+                       Foreground="Gray"
+                       FontSize="15"
+                       Margin="25, -580, 0, 0"/>
+                
+                <StackPanel Orientation="Horizontal"
+                        Margin="10, -550, 0, 0">
+
+                    <Label Height="25"
+                           Width="610"
+                           Margin="20, 20, 0, 0"
+                           Background="#2F333C"
+                           BorderThickness="0"
+                           Foreground="White"
+                           Name="SavePathLable"/>
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal"
+                            Margin="320, -350, 0, 0">
+
+                    <Button Width="150"
+                            Height="50"
+                            Margin="10, 20, 0, 0"
+                            Content="Archive"
+                            Background="#272B34"
+                            BorderThickness="0"
+                            Foreground="#90939A"
+                            FontWeight="Medium"
+                            FontSize="18"
+                            Style="{StaticResource InteractionButton}"
+                            Click="Archive"/>
+
+                    <Button Width="150"
+                            Height="50"
+                            Margin="10, 20, 0, 0"
+                            Content="Unpack"
+                            Background="#272B34"
+                            BorderThickness="0"
+                            Foreground="#90939A"
+                            FontWeight="Medium"
+                            FontSize="18"
+                            Style="{StaticResource InteractionButton}"
+                            Click="Unpack"/>
+
+                </StackPanel>
+                
+            </StackPanel>
+        </Border>
+
+    </Grid>
+</Window>
